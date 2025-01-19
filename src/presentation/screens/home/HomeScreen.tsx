@@ -1,11 +1,29 @@
 import { StyleSheet, Text, View } from "react-native";
-
-import { IConComponent } from "../../components/shared/IconComponent";
+import { globalStyles } from "../../../config/theme/theme";
+import { ScrollView } from "react-native-gesture-handler";
+import { Title } from "../../components/ui/Title";
+import { menuItems } from "../../../helper/menu-items";
+import { MenuItem } from "../../components/ui/MenuItem";
 
 export const HomeScreen = () => {
   return (
-    <View style={style.containter}>
-      <IConComponent name={"airplane"} />
+    <View style={globalStyles.mainContainer}>
+      <View style={globalStyles.globalMargin}>
+        <ScrollView>
+          <Title
+            text="Home"
+            save
+          />
+          {menuItems.map((item) => (
+            <MenuItem
+              key={item.component}
+              name={item.name}
+              icon={item.icon}
+              component={item.component}
+            />
+          ))}
+        </ScrollView>
+      </View>
     </View>
   );
 };

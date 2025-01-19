@@ -3,10 +3,13 @@ import { HomeScreen } from "../screens/home/HomeScreen";
 const Stack = createStackNavigator();
 export const AppNavigation = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen
+    <Stack.Navigator >
+
+      <Stack.Screen 
         name="HomeScreen"
+        
         component={HomeScreen}
+        options={{headerShown: false}}
       />
     </Stack.Navigator>
   );
