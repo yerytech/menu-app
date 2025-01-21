@@ -1,4 +1,3 @@
-import { Switch } from "react-native";
 import { Card } from "../../components/ui/Card";
 import { CustomView } from "../../components/ui/CustomView";
 
