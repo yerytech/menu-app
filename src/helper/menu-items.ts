@@ -1,16 +1,4 @@
 export const menuItems = [
-  // 01-animationMenuItems
-  {
-    name: "Animation 101",
-    icon: "cube-outline",
-    component: "Animation101Screen",
-  },
-  {
-    name: "Animation 102",
-    icon: "albums-outline",
-    component: "Animation102Screen",
-  },
-
   // 02-menuItems
   {
     name: "Pull to refresh",
@@ -41,22 +29,5 @@ export const menuItems = [
     name: "Themes",
     icon: "flask-outline",
     component: "ChangeThemeScreen",
-  },
-
-  // 03- uiMenuItems
-  {
-    name: "Switches",
-    icon: "toggle-outline",
-    component: "SwitchScreen",
-  },
-  {
-    name: "Alerts",
-    icon: "alert-circle-outline",
-    component: "AlertScreen",
-  },
-  {
-    name: "TextInputs",
-    icon: "document-text-outline",
-    component: "TextInputScreen",
   },
 ];

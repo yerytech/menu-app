@@ -2,18 +2,41 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import { colors } from "../../../config/theme/theme";
 import { IConComponent } from "../shared/IconComponent";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 interface Props {
   name: string;
   icon: string;
   component: string;
+  isFirst?: boolean;
+  isLast?: boolean;
 }
 
-export const MenuItem = ({ name, icon, component }: Props) => {
+export const MenuItem = ({
+  name,
+  icon,
+  component,
+  isFirst = false,
+  isLast = false,
+}: Props) => {
+  const navigation = useNavigation();
   return (
-    <Pressable onPress={() => console.log("tab")}>
+    <Pressable onPress={() => navigation.navigate(component as never)}>
       <View
-        style={{ ...styles.container, backgroundColor: colors.cardBackground }}
+        style={{
+          ...styles.container,
+          backgroundColor: colors.cardBackground,
+          ...(isFirst && {
+            borderTopLeftRadius: 10,
+            borderTopRightRadius: 10,
+            paddingTop: 10,
+          }),
+          ...(isLast && {
+            borderBottomLeftRadius: 10,
+            borderBottomRightRadius: 10,
+            paddingTop: 10,
+          }),
+        }}
       >
         <IConComponent
           name={icon}

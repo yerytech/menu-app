@@ -1,9 +1,11 @@
-import { StyleSheet, Text, View } from "react-native";
+import { View } from "react-native";
 import { globalStyles } from "../../../config/theme/theme";
 import { ScrollView } from "react-native-gesture-handler";
 import { Title } from "../../components/ui/Title";
 import { menuItems } from "../../../helper/menu-items";
 import { MenuItem } from "../../components/ui/MenuItem";
+import { animationItems } from "../../../helper/animation-items";
+import { uiMenuItems } from "../../../helper/uiMenuItems";
 
 export const HomeScreen = () => {
   return (
@@ -14,25 +16,44 @@ export const HomeScreen = () => {
             text="Home"
             save
           />
-          {menuItems.map((item) => (
-            <MenuItem
-              key={item.component}
-              name={item.name}
-              icon={item.icon}
-              component={item.component}
-            />
-          ))}
+          <View style={{ marginTop: 20 }}>
+            {animationItems.map((item, index) => (
+              <MenuItem
+                key={item.component}
+                {...item}
+                isFirst={index === 0}
+                isLast={index === animationItems.length - 1}
+                icon={item.icon}
+                component={item.component}
+              />
+            ))}
+          </View>
+          <View style={{ marginTop: 20 }}>
+            {menuItems.map((item, index) => (
+              <MenuItem
+                key={item.component}
+                {...item}
+                isFirst={index === 0}
+                isLast={index === menuItems.length - 1}
+                icon={item.icon}
+                component={item.component}
+              />
+            ))}
+          </View>
+          <View style={{ marginTop: 20 }}>
+            {uiMenuItems.map((item, index) => (
+              <MenuItem
+                key={item.component}
+                {...item}
+                isFirst={index === 0}
+                isLast={index === uiMenuItems.length - 1}
+                icon={item.icon}
+                component={item.component}
+              />
+            ))}
+          </View>
         </ScrollView>
       </View>
     </View>
   );
 };
-
-const style = StyleSheet.create({
-  containter: {
-    flex: 1,
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
