@@ -17,6 +17,7 @@ export const Button = ({ text, style, onPress }: Props) => {
           opacity: pressed ? 0.8 : 1,
           backgroundColor: colors.primary,
         },
+        style,
       ]}
     >
       <Text
@@ -25,7 +26,6 @@ export const Button = ({ text, style, onPress }: Props) => {
           {
             color: colors.buttonTextColor,
           },
-          ,
         ]}
       >
         {text}
