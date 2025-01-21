@@ -25,9 +25,10 @@ export const Button = ({ text, style, onPress }: Props) => {
           {
             color: colors.buttonTextColor,
           },
+          ,
         ]}
       >
-        Buttom
+        {text}
       </Text>
     </Pressable>
   );
