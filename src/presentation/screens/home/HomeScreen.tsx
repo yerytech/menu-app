@@ -15,7 +15,7 @@ export const HomeScreen = () => {
         <ScrollView>
           <Title
             text="Home"
-            save
+            safe
           />
           <View style={{ marginTop: 20 }}>
             {animationItems.map((item, index) => (
