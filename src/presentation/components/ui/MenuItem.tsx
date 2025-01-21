@@ -46,7 +46,13 @@ export const MenuItem = ({
             size={25}
             style={{ marginRight: 10, color: colors.primary }}
           />
-          <Text style={{ color: colors.text }}>{name}</Text>
+          <Text
+            numberOfLines={1}
+            ellipsizeMode="tail"
+            style={{ color: colors.text }}
+          >
+            {name}
+          </Text>
           <IConComponent
             name="chevron-forward"
             size={25}

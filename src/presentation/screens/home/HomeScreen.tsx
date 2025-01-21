@@ -6,7 +6,7 @@ import { menuItems } from "../../../helper/menu-items";
 import { MenuItem } from "../../components/ui/MenuItem";
 import { animationItems } from "../../../helper/animation-items";
 import { uiMenuItems } from "../../../helper/uiMenuItems";
-import { Divider } from "../../components/ui/Divider";
+
 
 export const HomeScreen = () => {
   return (
