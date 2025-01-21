@@ -36,8 +36,6 @@ export const TextInputScreen = () => {
         <TextInput
           style={globalStyles.input}
           placeholder="Enter your Phone"
-          autoCapitalize="none"
-          autoCorrect={false}
           keyboardType="phone-pad"
           onChangeText={(value) => setForm({ ...form, phone: value })}
         />
