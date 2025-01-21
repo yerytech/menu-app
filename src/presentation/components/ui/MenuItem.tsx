@@ -47,9 +47,10 @@ export const MenuItem = ({
             style={{ marginRight: 10, color: colors.primary }}
           />
           <Text
+            adjustsFontSizeToFit
             numberOfLines={1}
             ellipsizeMode="tail"
-            style={{ color: colors.text }}
+            style={{ color: colors.text, width: 200 }}
           >
             {name}
           </Text>
