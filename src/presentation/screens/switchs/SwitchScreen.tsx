@@ -3,6 +3,7 @@ import { CustomView } from "../../components/ui/CustomView";
 
 import React, { useState } from "react";
 import { CustomSwich } from "../../components/ui/CustomSwitch";
+import { Divider } from "../../components/ui/Divider";
 export const SwitchScreen = () => {
   const [state, setState] = useState({
     isActive: true,
@@ -17,11 +18,14 @@ export const SwitchScreen = () => {
           onChange={(value) => setState({ ...state, isActive: value })}
           text="Encendido"
         />
+        <Divider />
+
         <CustomSwich
           isOn={state.isHungry}
           onChange={(value) => setState({ ...state, isHungry: value })}
           text="Tiene Hambre?"
         />
+        <Divider />
         <CustomSwich
           isOn={state.isHappy}
           onChange={(value) => setState({ ...state, isHappy: value })}
@@ -31,6 +35,3 @@ export const SwitchScreen = () => {
     </CustomView>
   );
 };
-function setIsEnabled(arg0: (previousState: any) => boolean) {
-  throw new Error("Function not implemented.");
-}
