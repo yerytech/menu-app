@@ -3,7 +3,7 @@ import { CustomView } from "./CustomView";
 import { Title } from "./Title";
 import { useState } from "react";
 export const InfiniteScrollScreen = () => {
-  const [numbers, setNumbers] = useState([1, 2, 3, 4, 5]);
+  const [numbers, setNumbers] = useState([1, 2, 3, 5]);
 
   const loadMore = () => {
     const newArray = Array.from({ length: 5 }, (_, i) => numbers.length + i);
@@ -23,10 +23,16 @@ export const InfiniteScrollScreen = () => {
         onEndReachedThreshold={0.6}
         data={numbers}
         keyExtractor={(item) => item.toString()}
-        renderItem={({ item }) => (
-          <Text style={{ height: 300, fontSize: 50 }}> {item}</Text>
-        )}
+        renderItem={({ item }) => <ListItem number={item} />}
       />
     </CustomView>
   );
+};
+
+interface ListItemProps {
+  number: number;
+}
+
+const ListItem = ({ number }: ListItemProps) => {
+  return <Text style={{ height: 300, fontSize: 50 }}> {number}</Text>;
 };
