@@ -29,18 +29,7 @@ export const HomeScreen = () => {
               />
             ))}
           </View>
-          <View style={{ marginTop: 20 }}>
-            {menuItems.map((item, index) => (
-              <MenuItem
-                key={item.component}
-                {...item}
-                isFirst={index === 0}
-                isLast={index === menuItems.length - 1}
-                icon={item.icon}
-                component={item.component}
-              />
-            ))}
-          </View>
+
           <View style={{ marginTop: 20 }}>
             {uiMenuItems.map((item, index) => (
               <MenuItem
@@ -48,6 +37,19 @@ export const HomeScreen = () => {
                 {...item}
                 isFirst={index === 0}
                 isLast={index === uiMenuItems.length - 1}
+                icon={item.icon}
+                component={item.component}
+              />
+            ))}
+          </View>
+
+          <View style={{ marginTop: 20 }}>
+            {menuItems.map((item, index) => (
+              <MenuItem
+                key={item.component}
+                {...item}
+                isFirst={index === 0}
+                isLast={index === menuItems.length - 1}
                 icon={item.icon}
                 component={item.component}
               />

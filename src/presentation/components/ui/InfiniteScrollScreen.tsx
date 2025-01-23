@@ -3,8 +3,9 @@ import { CustomView } from "./CustomView";
 import { Title } from "./Title";
 import { useState } from "react";
 import { colors } from "../../../config/theme/theme";
+import { FadeInImage } from "./FadeInImage";
 export const InfiniteScrollScreen = () => {
-  const [numbers, setNumbers] = useState([1, 2, 3, 5]);
+  const [numbers, setNumbers] = useState([1, 2, 3, 4, 5]);
 
   const loadMore = () => {
     const newArray = Array.from({ length: 5 }, (_, i) => numbers.length + i);
@@ -47,9 +48,14 @@ interface ListItemProps {
 
 const ListItem = ({ number }: ListItemProps) => {
   return (
-    <Image
-      src={`https://picsum.photos/id/${number}/500/400`}
+    <FadeInImage
       style={{ width: "100%", height: 400 }}
+      uri={`https://picsum.photos/id/${number}/500/400`}
     />
+
+    // <Image
+    //   src={`https://picsum.photos/id/${number}/500/400`}
+    //   style={{ width: "100%", height: 400 }}
+    // />
   );
 };
