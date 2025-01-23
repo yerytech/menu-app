@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { Button } from "../../components/ui/Button";
 import { CustomView } from "../../components/ui/CustomView";
 import { Title } from "../../components/ui/Title";
+import { ThemeContext } from "../../context/ThemeContext";
 export const ChangeThemeScreen = () => {
+  const { setTheme } = useContext(ThemeContext);
   return (
     <CustomView margin>
       <Title
@@ -12,12 +15,12 @@ export const ChangeThemeScreen = () => {
       <Button
         style={{ marginBottom: 20 }}
         text="Light"
-        onPress={() => {}}
+        onPress={() => setTheme("ligth")}
       />
 
       <Button
         text="Dark"
-        onPress={() => {}}
+        onPress={() => setTheme("dark")}
       />
     </CustomView>
   );
