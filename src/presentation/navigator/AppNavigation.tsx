@@ -9,6 +9,7 @@ import { PullToRefreshScreen } from "../screens/ui/PullToRefreshScreen";
 import { CustomSectionListScreen } from "../screens/ui/CustomSectionListScreen";
 import { ModalScreen } from "../components/ui/ModalScreen";
 import { InfiniteScrollScreen } from "../components/ui/InfiniteScrollScreen";
+import { SlidesScreen } from "../screens/ui/SlidesScreen";
 const Stack = createStackNavigator();
 export const AppNavigation = () => {
   return (
@@ -61,6 +62,11 @@ export const AppNavigation = () => {
       <Stack.Screen
         name="InfiniteScrollScreen"
         component={InfiniteScrollScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="SlidesScreen"
+        component={SlidesScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
