@@ -11,6 +11,7 @@ import {
   SafeAreaInsetsContext,
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
+import { Button } from "../../components/ui/Button";
 
 interface Slide {
   title: string;
@@ -48,6 +49,12 @@ export const SlidesScreen = () => {
         renderItem={({ item }) => <SlideItem item={item} />}
         pagingEnabled
         scrollEnabled={false}
+      />
+
+      <Button
+        style={{ position: "absolute", bottom: 60, right: 30, width: 100 }}
+        text="Next"
+        onPress={() => {}}
       />
     </View>
   );
