@@ -4,12 +4,13 @@ import { CustomView } from "../../components/ui/CustomView";
 import { Title } from "../../components/ui/Title";
 import { ThemeContext } from "../../context/ThemeContext";
 export const ChangeThemeScreen = () => {
-  const { setTheme } = useContext(ThemeContext);
+  const { setTheme, currentTheme } = useContext(ThemeContext);
+
   return (
     <CustomView margin>
       <Title
         safe
-        text=" Cambiar theme"
+        text={`Cambiar theme: ${currentTheme}`}
       />
 
       <Button
