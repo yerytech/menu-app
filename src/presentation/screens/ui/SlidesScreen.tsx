@@ -8,7 +8,7 @@ import {
   useWindowDimensions,
   View,
 } from "react-native";
-import { colors, globalStyles } from "../../../config/theme/theme";
+import { globalStyles } from "../../../config/theme/theme";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Button } from "../../components/ui/Button";
 import { useContext, useRef, useState } from "react";
