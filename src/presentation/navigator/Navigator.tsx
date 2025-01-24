@@ -13,7 +13,7 @@ import { SlidesScreen } from "../screens/ui/SlidesScreen";
 import { ChangeThemeScreen } from "../screens/theme/ChangeThemeScreen";
 import { ModalScreen } from "../screens/ui/ModalScreen";
 const Stack = createStackNavigator();
-export const AppNavigation = () => {
+export const Navigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
