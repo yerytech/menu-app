@@ -3,8 +3,9 @@ import { Button } from "../../components/ui/Button";
 import { CustomView } from "../../components/ui/CustomView";
 import { Title } from "../../components/ui/Title";
 import { ThemeContext } from "../../context/ThemeContext";
+import { Text } from "react-native";
 export const ChangeThemeScreen = () => {
-  const { setTheme, currentTheme } = useContext(ThemeContext);
+  const { setTheme, currentTheme, colors } = useContext(ThemeContext);
 
   return (
     <CustomView margin>
@@ -23,6 +24,10 @@ export const ChangeThemeScreen = () => {
         text="Dark"
         onPress={() => setTheme("dark")}
       />
+
+      <Text style={{ color: colors.text }}>
+        {JSON.stringify(colors, null, 2)}
+      </Text>
     </CustomView>
   );
 };

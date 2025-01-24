@@ -1,5 +1,5 @@
 import { Children, createContext, PropsWithChildren, useState } from "react";
-import { lightColors, ThemeColors } from "../../config/theme/theme";
+import { darkColors, lightColors, ThemeColors } from "../../config/theme/theme";
 
 type ThemeColor = "ligth" | "dark";
 
@@ -20,7 +20,7 @@ export const ThemeProvider = ({ children }: PropsWithChildren) => {
     <ThemeContext.Provider
       value={{
         currentTheme: currentTheme,
-        colors: lightColors,
+        colors: currentTheme === "ligth" ? lightColors : darkColors,
         setTheme: setTheme,
       }}
     >
