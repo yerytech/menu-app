@@ -1,14 +1,15 @@
-import { Animated, StyleSheet, Text, View } from "react-native";
+import { Animated, StyleSheet } from "react-native";
 import { useAnimation } from "../../hooks/useAnimation";
+import { CustomView } from "../../components/ui/CustomView";
 export const Animation102Screen = () => {
   const { panResponder, pan } = useAnimation();
   return (
-    <View style={styles.container}>
+    <CustomView style={styles.container}>
       <Animated.View
         {...panResponder.panHandlers}
         style={[pan.getLayout(), styles.tealBox]}
       />
-    </View>
+    </CustomView>
   );
 };
 
