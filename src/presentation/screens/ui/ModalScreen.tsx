@@ -13,7 +13,7 @@ export const ModalScreen = () => {
         text="Modal"
       />
       <Button
-        text={"Abrir Modal"}
+        text={"open"}
         onPress={() => setIsVisible(true)}
       />
 
@@ -36,7 +36,7 @@ export const ModalScreen = () => {
           <View style={{ flex: 1 }} />
           <Button
             style={{ height: Platform.OS === "ios" ? 40 : 60, borderRadius: 0 }}
-            text={"Cerrar Modal"}
+            text={"close"}
             onPress={() => setIsVisible(false)}
           />
         </CustomView>
