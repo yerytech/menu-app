@@ -10,8 +10,9 @@ import { CustomView } from "../../components/ui/CustomView";
 import { Title } from "../../components/ui/Title";
 import { globalStyles } from "../../../config/theme/theme";
 import { Card } from "../../components/ui/Card";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { ThemeContext } from "../../context/ThemeContext";
 export const TextInputScreen = () => {
   const { top } = useSafeAreaInsets();
   const [form, setForm] = useState({
@@ -19,6 +20,8 @@ export const TextInputScreen = () => {
     email: "",
     phone: "",
   });
+
+  const { colors } = useContext(ThemeContext);
   return (
     <KeyboardAvoidingView
       style={{ flex: 1, marginTop: top }}
@@ -33,14 +36,30 @@ export const TextInputScreen = () => {
 
           <Card>
             <TextInput
-              style={globalStyles.input}
+              cursorColor={colors.text}
+              style={[
+                globalStyles.input,
+                {
+                  color: colors.text,
+                  borderBlockColor: colors.text,
+                  borderColor: colors.text,
+                },
+              ]}
               placeholder="Enter your name"
               autoCapitalize="words"
               autoCorrect={false}
               onChangeText={(value) => setForm({ ...form, name: value })}
             />
             <TextInput
-              style={globalStyles.input}
+              cursorColor={colors.text}
+              style={[
+                globalStyles.input,
+                {
+                  color: colors.text,
+                  borderBlockColor: colors.text,
+                  borderColor: colors.text,
+                },
+              ]}
               placeholder="Enter your email"
               autoCapitalize="none"
               autoCorrect={false}
@@ -48,7 +67,15 @@ export const TextInputScreen = () => {
               onChangeText={(value) => setForm({ ...form, email: value })}
             />
             <TextInput
-              style={globalStyles.input}
+              cursorColor={colors.text}
+              style={[
+                globalStyles.input,
+                {
+                  color: colors.text,
+                  borderBlockColor: colors.text,
+                  borderColor: colors.text,
+                },
+              ]}
               placeholder="Enter your Phone"
               keyboardType="phone-pad"
               onChangeText={(value) => setForm({ ...form, phone: value })}

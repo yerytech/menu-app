@@ -10,10 +10,7 @@ import { CustomView } from "../../components/ui/CustomView";
 
 export const HomeScreen = () => {
   return (
-    <CustomView
-      margin
-      style={globalStyles.mainContainer}
-    >
+    <CustomView margin>
       <ScrollView>
         <Title
           text="Home"

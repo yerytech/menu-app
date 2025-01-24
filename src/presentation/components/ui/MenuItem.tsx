@@ -1,10 +1,9 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
-import { colors } from "../../../config/theme/theme";
 import { IConComponent } from "../shared/IconComponent";
-import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { Divider } from "./Divider";
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 
 interface Props {
   name: string;
@@ -22,6 +21,7 @@ export const MenuItem = ({
   isLast = false,
 }: Props) => {
   const navigation = useNavigation();
+  const { colors } = useContext(ThemeContext);
   return (
     <>
       <Pressable onPress={() => navigation.navigate(component as never)}>

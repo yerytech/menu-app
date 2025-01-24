@@ -14,7 +14,7 @@ export const Divider = ({ style }: Props) => {
           {
             borderRadius: 100,
             borderBottomWidth: 1,
-            borderBottomColor: "gray",
+            borderBottomColor: colors.text,
             marginHorizontal: 10,
             opacity: 0.5,
           },
