@@ -26,8 +26,10 @@ export const Button = ({ text, style, onPress }: Props) => {
       <Text
         style={[
           globalStyles.btnPrimaryText,
+
           {
             color: colors.buttonTextColor,
+            width: "20%",
           },
         ]}
       >

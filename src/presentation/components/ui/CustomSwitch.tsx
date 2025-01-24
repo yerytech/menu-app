@@ -12,7 +12,7 @@ export const CustomSwich = ({ isOn, text, onChange }: Props) => {
   const { colors } = useContext(ThemeContext);
   return (
     <View style={style.SwitchRow}>
-      {text && <Text style={{ width: "40%", color: colors.text }}>{text}</Text>}
+      {text && <Text style={{ width: "30%", color: colors.text }}>{text}</Text>}
       <Switch
         thumbColor={Platform.OS === "android" ? colors.primary : ""}
         ios_backgroundColor="#3e3e3e"

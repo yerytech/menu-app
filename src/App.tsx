@@ -1,5 +1,9 @@
-import React, { PropsWithChildren } from "react";
-import { DarkTheme, NavigationContainer } from "@react-navigation/native";
+import React, { PropsWithChildren, useContext } from "react";
+import {
+  DarkTheme,
+  DefaultTheme,
+  NavigationContainer,
+} from "@react-navigation/native";
 import { Navigator } from "./presentation/navigator/Navigator";
 import {
   ThemeContext,
@@ -7,8 +11,14 @@ import {
 } from "./presentation/context/ThemeContext";
 
 const AppNavigation = ({ children }: PropsWithChildren) => {
+  const { currentTheme } = useContext(ThemeContext);
+
   return (
-    <NavigationContainer theme={DarkTheme}>{children}</NavigationContainer>
+    <NavigationContainer
+      theme={currentTheme === "dark" ? DarkTheme : DefaultTheme}
+    >
+      {children}
+    </NavigationContainer>
   );
 };
 
