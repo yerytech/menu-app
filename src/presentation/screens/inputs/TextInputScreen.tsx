@@ -11,7 +11,9 @@ import { Title } from "../../components/ui/Title";
 import { globalStyles } from "../../../config/theme/theme";
 import { Card } from "../../components/ui/Card";
 import { useState } from "react";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 export const TextInputScreen = () => {
+  const { top } = useSafeAreaInsets();
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -19,6 +21,7 @@ export const TextInputScreen = () => {
   });
   return (
     <KeyboardAvoidingView
+      style={{ flex: 1, marginTop: top }}
       behavior={Platform.OS === "ios" ? "padding" : "position"}
     >
       <ScrollView>
@@ -77,8 +80,8 @@ export const TextInputScreen = () => {
             />
           </Card>
         </CustomView>
+        <CustomView style={{ height: 20 }} />
       </ScrollView>
-      <View style={{ height: 20 }} />
     </KeyboardAvoidingView>
   );
 };

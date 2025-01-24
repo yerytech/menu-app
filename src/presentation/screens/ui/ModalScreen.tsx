@@ -1,8 +1,9 @@
-import { Modal, Platform, Text, View } from "react-native";
-import { CustomView } from "./CustomView";
-import { Title } from "./Title";
-import { Button } from "./Button";
+import { Modal, Platform, View } from "react-native";
+
 import { useState } from "react";
+import { CustomView } from "../../components/ui/CustomView";
+import { Title } from "../../components/ui/Title";
+import { Button } from "../../components/ui/Button";
 export const ModalScreen = () => {
   const [isVisible, setIsVisible] = useState(false);
   return (
@@ -20,7 +21,7 @@ export const ModalScreen = () => {
         visible={isVisible}
         animationType="slide"
       >
-        <View
+        <CustomView
           style={{
             flex: 1,
             backgroundColor: "rgba(0,0,0,0,1)",
@@ -38,7 +39,7 @@ export const ModalScreen = () => {
             text={"Cerrar Modal"}
             onPress={() => setIsVisible(false)}
           />
-        </View>
+        </CustomView>
       </Modal>
     </CustomView>
   );

@@ -7,10 +7,11 @@ import { AlertScreen } from "../screens/alerts/AlertScreen";
 import { TextInputScreen } from "../screens/inputs/TextInputScreen";
 import { PullToRefreshScreen } from "../screens/ui/PullToRefreshScreen";
 import { CustomSectionListScreen } from "../screens/ui/CustomSectionListScreen";
-import { ModalScreen } from "../components/ui/ModalScreen";
+
 import { InfiniteScrollScreen } from "../components/ui/InfiniteScrollScreen";
 import { SlidesScreen } from "../screens/ui/SlidesScreen";
 import { ChangeThemeScreen } from "../screens/theme/ChangeThemeScreen";
+import { ModalScreen } from "../screens/ui/ModalScreen";
 const Stack = createStackNavigator();
 export const AppNavigation = () => {
   return (

@@ -11,8 +11,10 @@ import {
 import { colors, globalStyles } from "../../../config/theme/theme";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Button } from "../../components/ui/Button";
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
+import { CustomView } from "../../components/ui/CustomView";
+import { ThemeContext } from "../../context/ThemeContext";
 
 interface Slide {
   title: string;
@@ -55,7 +57,7 @@ export const SlidesScreen = () => {
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: colors.background }}>
+    <CustomView>
       <FlatList
         ref={flatListRef}
         horizontal
@@ -82,7 +84,7 @@ export const SlidesScreen = () => {
           onPress={() => scrollToNextSlide(currentSlideIndex + 1)}
         />
       )}
-    </View>
+    </CustomView>
   );
 };
 
@@ -92,12 +94,13 @@ interface SlideItemsProps {
 
 const SlideItem = ({ item }: SlideItemsProps) => {
   const { width } = useWindowDimensions();
+  const { colors } = useContext(ThemeContext);
   const { title, img, desc } = item;
   return (
-    <View
+    <CustomView
       style={{
         flex: 1,
-        backgroundColor: "white",
+        backgroundColor: colors.background,
         borderRadius: 5,
         padding: 40,
         justifyContent: "center",
@@ -124,6 +127,6 @@ const SlideItem = ({ item }: SlideItemsProps) => {
         {title}
       </Text>
       <Text style={{ color: colors.text, marginTop: 20 }}> {desc}</Text>
-    </View>
+    </CustomView>
   );
 };

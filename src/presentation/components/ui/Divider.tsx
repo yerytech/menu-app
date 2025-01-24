@@ -1,11 +1,14 @@
 import { StyleProp, View, ViewStyle } from "react-native";
-import { colors } from "../../../config/theme/theme";
+import { CustomView } from "./CustomView";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 interface Props {
   style?: StyleProp<ViewStyle>;
 }
 export const Divider = ({ style }: Props) => {
+  const { colors } = useContext(ThemeContext);
   return (
-    <View style={{ backgroundColor: colors.cardBackground }}>
+    <CustomView style={{ backgroundColor: colors.cardBackground }}>
       <View
         style={[
           {
@@ -18,6 +21,6 @@ export const Divider = ({ style }: Props) => {
           style,
         ]}
       />
-    </View>
+    </CustomView>
   );
 };
