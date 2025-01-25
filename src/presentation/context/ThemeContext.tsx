@@ -1,6 +1,12 @@
-import { createContext, PropsWithChildren, useEffect, useState } from "react";
+import {
+  createContext,
+  PropsWithChildren,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { darkColors, lightColors, ThemeColors } from "../../config/theme/theme";
-import { Appearance, AppState, useColorScheme } from "react-native";
+import { Appearance, AppState, StatusBar, useColorScheme } from "react-native";
 
 import {
   DarkTheme,
@@ -48,9 +54,14 @@ export const ThemeProvider = ({ children }: PropsWithChildren) => {
 
   const setTheme = (theme: ThemeColor) => {
     setCurrentTheme(theme);
+    const { colors } = useContext(ThemeContext);
   };
   return (
     <NavigationContainer theme={isDark ? DarkTheme : DefaultTheme}>
+      <StatusBar
+        backgroundColor={colors.background}
+        barStyle={isDark ? "light-content" : "dark-content"}
+      />
       <ThemeContext.Provider
         value={{
           currentTheme: currentTheme,
